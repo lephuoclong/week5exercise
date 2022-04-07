@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_listView"
+        android:title="ListView"/>
+    <item android:title="gridView"
+        android:id="@+id/menu_gridView"/>
+</menu>
