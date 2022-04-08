@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Secondexercise">
         <activity
-            android:name=".features.list.RestaurantActivity"
+            android:name=".features.home.RestaurantActivity"
             android:exported="false" />
         <activity
             android:name=".features.welcome.Welcome"

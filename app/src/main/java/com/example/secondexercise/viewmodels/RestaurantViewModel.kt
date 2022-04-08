@@ -11,9 +11,15 @@ import com.example.secondexercise.utils.DataStore
 class RestaurantViewModel : ViewModel() {
     private var _listRestaurant :MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
     private var _menuOptions: MutableLiveData<Boolean> = MutableLiveData(false)
-
+    var LISTVIEW_OPTION = 1
+    var GRIDVIEW_OPTION = 2
+    var CURRENT_OPTION = LISTVIEW_OPTION
     val menuOptions:LiveData<Boolean>
     get() = _menuOptions
+
+    fun setValueToCurrentOption(value:Int){
+        CURRENT_OPTION = value
+    }
 
     val listRestaurant : LiveData<ArrayList<Restaurant>>
     get() = _listRestaurant

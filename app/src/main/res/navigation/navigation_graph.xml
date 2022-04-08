@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.secondexercise.features.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            app:popUpTo="@+id/splashFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_splashFragment_to_onboardingOneFragment2"
+            app:destination="@id/onboardingOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.secondexercise.features.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.secondexercise.features.security.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            app:popUpTo="@+id/onboardingOneFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_loginFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingOneFragment"
+        android:name="com.example.secondexercise.features.onBoarding.OnboardingOneFragment"
+        android:label="OnboardingOneFragment" >
+        <action
+            android:id="@+id/action_onboardingOneFragment_to_onboardingTwoFragment"
+            app:destination="@id/onboardingTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingTwoFragment"
+        android:name="com.example.secondexercise.features.onBoarding.OnboardingTwoFragment"
+        android:label="OnboardingTwoFragment" >
+        <action
+            android:id="@+id/action_onboardingTwoFragment_to_onboardingThreeFragment"
+            app:destination="@id/onboardingThreeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingThreeFragment"
+        android:name="com.example.secondexercise.features.onBoarding.OnboardingThreeFragment"
+        android:label="OnboardingThreeFragment" >
+        <action
+            android:id="@+id/action_onboardingThreeFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.secondexercise.features.security.RegisterFragment"
+        android:label="RegisterFragment" >
+        <action
+            app:popUpTo="@+id/registerFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.secondexercise.features.welcome.WelcomeFragment"
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.secondexercise.features.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            app:popUpTo="@+id/homeFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_profileFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+        <action
+            app:popUpTo="@+id/profileFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>

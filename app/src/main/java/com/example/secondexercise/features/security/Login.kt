@@ -10,9 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.example.secondexercise.features.list.RestaurantActivity
-import com.example.secondexercise.features.profile.Profile
-import com.example.secondexercise.utils.DataStore
+import com.example.secondexercise.features.home.RestaurantActivity
 import com.example.secondexercise.viewmodels.LoginViewModel
 
 class Login : AppCompatActivity() {
