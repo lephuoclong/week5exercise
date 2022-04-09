@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".features.profile.Profile"
@@ -117,20 +117,21 @@
             android:text="Full name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
         <Button
-            android:textAllCaps="false"
-            android:typeface="normal"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            app:backgroundTint="@null"
             android:id="@+id/btnFullnameProfile"
-            android:textStyle="normal"
-            android:text="Quach Khieu Toan"
-            android:layout_marginTop="12dp"
-            android:layout_marginHorizontal="27dp"
-            android:background="@drawable/custom_edit_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="27dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/custom_edit_text"
+            android:text="Quach Khieu Toan"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:typeface="normal"
+            app:backgroundTint="@null" />
         <TextView
             android:layout_marginTop="29dp"
             android:textSize="16sp"
@@ -138,19 +139,20 @@
             android:text="Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
         <Button
-            android:textAllCaps="false"
-            android:typeface="normal"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            app:backgroundTint="@null"
             android:id="@+id/btnEmailProfile"
-            android:text="khieutoan@gmail.com"
-            android:layout_marginTop="12dp"
-            android:layout_marginHorizontal="27dp"
-            android:background="@drawable/custom_edit_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="27dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/custom_edit_text"
+            android:text="khieutoan@gmail.com"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:typeface="normal"
+            app:backgroundTint="@null" />
         <TextView
             android:layout_marginTop="29dp"
             android:textSize="16sp"
@@ -158,18 +160,29 @@
             android:text="Phone number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
         <Button
-            android:typeface="normal"
-            app:backgroundTint="@null"
             android:id="@+id/btnPhoneNumberProfile"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="27dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/custom_edit_text"
+            android:text="0123456789"
             android:textAlignment="textStart"
             android:textColor="@color/black"
-            android:text="0123456789"
-            android:layout_marginTop="12dp"
-            android:layout_marginHorizontal="27dp"
-            android:background="@drawable/custom_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:typeface="normal"
+            app:backgroundTint="@null"
+            />
+
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="75dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logout"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"/>
 
     </LinearLayout>
 </layout>
