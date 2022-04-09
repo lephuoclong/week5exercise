@@ -5,10 +5,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.secondexercise.models.Restaurant
+import com.example.secondexercise.models.User
 import com.example.secondexercise.utils.DataStore
+import com.google.gson.Gson
 
 
-class RestaurantViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
     private var _listRestaurant :MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
     private var _menuOptions: MutableLiveData<Boolean> = MutableLiveData(false)
     var LISTVIEW_OPTION = 1
@@ -16,6 +18,7 @@ class RestaurantViewModel : ViewModel() {
     var CURRENT_OPTION = LISTVIEW_OPTION
     val menuOptions:LiveData<Boolean>
     get() = _menuOptions
+
 
     fun setValueToCurrentOption(value:Int){
         CURRENT_OPTION = value

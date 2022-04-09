@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.secondexercise.R
 import com.example.secondexercise.databinding.FragmentLoginBinding
 import com.example.secondexercise.features.home.RestaurantActivity
+import com.example.secondexercise.utils.DataStore
 import com.example.secondexercise.viewmodels.LoginViewModel
 
 class LoginFragment : Fragment() {
@@ -52,12 +53,11 @@ class LoginFragment : Fragment() {
         val username = binding.txtUsername.text.toString().trim()
         val password = binding.txtPassword.text.toString().trim()
         val success = viewModel.doLogin(username, password)
-        if(success) {
+        if(success!=null) {
             Toast.makeText(requireActivity(), "Login Success!", Toast.LENGTH_SHORT).show()
-            val bundle = Bundle()
-            bundle.putString("username", username)
-            bundle.putString("password", password)
-            findNavController().navigate(R.id.action_loginFragment_to_homeFragment, bundle)
+            DataStore.initSharedPref(requireContext())
+            DataStore.writeUserDataToSharedPref(success)
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }else{
             Toast.makeText(requireActivity(), "Username or password incorrect!", Toast.LENGTH_SHORT).show()
         }

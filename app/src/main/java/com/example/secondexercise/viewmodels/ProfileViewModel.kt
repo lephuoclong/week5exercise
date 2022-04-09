@@ -15,14 +15,11 @@ class ProfileViewModel : ViewModel() {
 
     fun editUser(fullname:String, email: String, phone:String){
         val user = User(fullname, email, _user.value?.password!!, phone)
+        DataStore.writeUserDataToSharedPref(user)
         _user.postValue(user)
     }
 
-    fun getUser(email:String, password:String){
-        for (user in DataStore.listUser){
-            if (user.email == email && user.password == password){
-                _user.postValue(user)
-            }
-        }
+    fun getUser(){
+        _user.postValue(DataStore.getUserFromSharedPref())
     }
 }

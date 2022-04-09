@@ -1,21 +1,17 @@
 package com.example.secondexercise.adapters
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.secondexercise.R
 import com.example.secondexercise.models.Restaurant
-import com.example.secondexercise.viewmodels.RestaurantViewModel
 
 class RestaurantsAdapter(val context: Context, private val onClickItem: ClickItem) : RecyclerView.Adapter<RestaurantsAdapter.RestaurantViewHolder>() {
 

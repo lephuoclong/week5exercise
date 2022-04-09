@@ -17,11 +17,13 @@ import com.example.secondexercise.R
 import com.example.secondexercise.adapters.RestaurantsAdapter
 import com.example.secondexercise.databinding.FragmentHomeBinding
 import com.example.secondexercise.models.Restaurant
-import com.example.secondexercise.viewmodels.RestaurantViewModel
+import com.example.secondexercise.models.User
+import com.example.secondexercise.utils.DataStore
+import com.example.secondexercise.viewmodels.HomeViewModel
 
 class HomeFragment : Fragment() {
     private lateinit var binding:FragmentHomeBinding
-    private lateinit var viewModel: RestaurantViewModel
+    private lateinit var viewModel: HomeViewModel
     private lateinit var adapterRestaurant: RestaurantsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +44,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(RestaurantViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         viewModel.getListRestaurant(requireContext())
         viewModel.listRestaurant.observe(viewLifecycleOwner, Observer {list->
@@ -71,6 +73,7 @@ class HomeFragment : Fragment() {
         }
         return super.onOptionsItemSelected(item)
     }
+
     private fun setUpRecyclerView(list:ArrayList<Restaurant>, option:Boolean) {
         adapterRestaurant = RestaurantsAdapter(requireContext(), object : RestaurantsAdapter.ClickItem{
             override fun clickItem(restaurant: Restaurant) {

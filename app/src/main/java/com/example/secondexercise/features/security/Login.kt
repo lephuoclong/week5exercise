@@ -62,7 +62,7 @@ class Login : AppCompatActivity() {
         val username = binding.txtUsername.text.toString().trim()
         val password = binding.txtPassword.text.toString().trim()
         val success = viewModel.doLogin(username, password)
-        if(success) {
+        if(success!=null) {
             Toast.makeText(this@Login, "Login Success!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this@Login, RestaurantActivity::class.java)
             val bundle = Bundle()

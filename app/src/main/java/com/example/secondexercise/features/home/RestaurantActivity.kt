@@ -14,19 +14,19 @@ import com.example.secondexercise.R
 import com.example.secondexercise.adapters.RestaurantsAdapter
 import com.example.secondexercise.databinding.ActivityRestaurantBinding
 import com.example.secondexercise.models.Restaurant
-import com.example.secondexercise.viewmodels.RestaurantViewModel
+import com.example.secondexercise.viewmodels.HomeViewModel
 
 
 class RestaurantActivity : AppCompatActivity() {
     private lateinit var binding:ActivityRestaurantBinding
-    private lateinit var viewModel:RestaurantViewModel
+    private lateinit var viewModel:HomeViewModel
     private lateinit var adapterRestaurant:RestaurantsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_restaurant)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_restaurant)
-        viewModel = ViewModelProvider(this).get(RestaurantViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         viewModel.getListRestaurant(this@RestaurantActivity)
         viewModel.listRestaurant.observe(this, Observer {list->

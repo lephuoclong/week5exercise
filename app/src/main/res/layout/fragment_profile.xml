@@ -175,15 +175,20 @@
             app:backgroundTint="@null"
             />
 
-        <ImageButton
+        <Button
+            app:icon="@drawable/ic_log_out"
+            android:textAllCaps="false"
             android:id="@+id/btnlogout"
-            android:layout_width="150dp"
-            android:layout_height="75dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/logout"
-            android:background="@null"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"/>
+            android:textColor="@color/white"
+            android:elevation="20dp"
+            android:shadowColor="@color/black"
+            android:text="Log Out"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="130dp"
+            app:backgroundTint="@null"
+            android:background="@drawable/custom_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
 
     </LinearLayout>
 </layout>

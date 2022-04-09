@@ -15,6 +15,11 @@
             app:popUpToInclusive="true"
             android:id="@+id/action_splashFragment_to_onboardingOneFragment2"
             app:destination="@id/onboardingOneFragment" />
+        <action
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_splashFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -95,6 +100,11 @@
         <action
             android:id="@+id/action_welcomeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            app:popUpToInclusive="true"
+            app:popUpTo="@+id/welcomeFragment"
+            android:id="@+id/action_welcomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"

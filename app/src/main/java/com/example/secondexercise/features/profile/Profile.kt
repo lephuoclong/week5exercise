@@ -58,7 +58,7 @@ class Profile : AppCompatActivity() {
         val bundle = intent?.extras
         val username = bundle?.getString("username")
         val password = bundle?.getString("password")
-        viewModel.getUser(username!!, password!!)
+        viewModel.getUser()
     }
 
     private fun bindDataUserToView(user: User){

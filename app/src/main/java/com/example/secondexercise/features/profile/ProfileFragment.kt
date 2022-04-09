@@ -1,7 +1,6 @@
 package com.example.secondexercise.features.profile
 
 import android.app.Dialog
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,8 +14,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.secondexercise.R
 import com.example.secondexercise.databinding.FragmentProfileBinding
-import com.example.secondexercise.features.security.Login
 import com.example.secondexercise.models.User
+import com.example.secondexercise.utils.DataStore
 import com.example.secondexercise.viewmodels.ProfileViewModel
 
 class ProfileFragment : Fragment() {
@@ -59,12 +58,8 @@ class ProfileFragment : Fragment() {
     }
 
     private fun getUser(){
-        val bundle = arguments
-        if(bundle!=null){
-            val username = bundle.getString("username")
-            val password = bundle.getString("password")
-            viewModel.getUser(username!!, password!!)
-        }
+        DataStore.initSharedPref(requireContext())
+        viewModel.getUser()
     }
 
     private fun bindDataUserToView(user: User){
@@ -103,6 +98,8 @@ class ProfileFragment : Fragment() {
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
         binding.btnlogout.setOnClickListener {
+            DataStore.initSharedPref(requireContext())
+            DataStore.removeUserDataFromSharedPref()
             val controller = findNavController()
             controller.navigate(R.id.action_profileFragment_to_welcomeFragment)
         }

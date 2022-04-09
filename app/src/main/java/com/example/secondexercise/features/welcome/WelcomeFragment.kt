@@ -15,6 +15,7 @@ import com.example.secondexercise.R
 import com.example.secondexercise.databinding.FragmentWelcomeBinding
 import com.example.secondexercise.features.security.Login
 import com.example.secondexercise.features.security.Register
+import com.example.secondexercise.utils.DataStore
 
 class WelcomeFragment : Fragment() {
 
@@ -27,7 +28,11 @@ class WelcomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        DataStore.initSharedPref(requireContext())
+        val user = DataStore.getUserFromSharedPref()
+        if(user!=null){
+            findNavController().navigate(R.id.action_welcomeFragment_to_homeFragment)
+        }
         val mSignIn = binding.welcomeSignin.text
         val uSignIn = SpannableString(mSignIn)
         uSignIn.setSpan(UnderlineSpan(), 0, uSignIn.length, 0 )
