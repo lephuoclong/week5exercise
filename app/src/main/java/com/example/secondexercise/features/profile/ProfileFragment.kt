@@ -99,4 +99,12 @@ class ProfileFragment : Fragment() {
         }
         dialog.show()
     }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        binding.btnlogout.setOnClickListener {
+            val controller = findNavController()
+            controller.navigate(R.id.action_profileFragment_to_welcomeFragment)
+        }
+    }
 }

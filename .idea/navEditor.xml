@@ -35,7 +35,7 @@
                         <option name="myPosition">
                           <Point>
                             <option name="x" value="249" />
-                            <option name="y" value="138" />
+                            <option name="y" value="201" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -46,6 +46,11 @@
                               </value>
                             </entry>
                             <entry key="action_loginFragment_to_registerFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_loginFragment_to_welcomeFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
