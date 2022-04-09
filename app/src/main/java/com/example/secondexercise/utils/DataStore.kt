@@ -51,7 +51,7 @@ object DataStore {
         try {
             val inputStream: InputStream = context.assets.open("data_restaurants.json")
             json = inputStream.bufferedReader().use { it.readText() }
-            Toast.makeText(context, "json $json", Toast.LENGTH_LONG).show()
+
             val gson = Gson()
             val jsonArray = JSONArray(json)
             for (i in 0 until jsonArray.length()) {

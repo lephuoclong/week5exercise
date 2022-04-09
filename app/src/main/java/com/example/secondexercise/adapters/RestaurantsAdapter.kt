@@ -23,6 +23,8 @@ class RestaurantsAdapter(val context: Context, private val onClickItem: ClickIte
         var restaurantName: TextView = itemView.findViewById(R.id.tv_restaurant)
         var restaurantAddress :TextView = itemView.findViewById(R.id.tv_restaurant2)
         var restaurantImg :ImageView = itemView.findViewById(R.id.im_restaurant)
+        var txtItems: TextView = itemView.findViewById(R.id.txtItems)
+        var txtPrice: TextView = itemView.findViewById(R.id.txtPrice)
 
     }
 
@@ -45,8 +47,17 @@ class RestaurantsAdapter(val context: Context, private val onClickItem: ClickIte
 
     override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
         val restaurant = differ.currentList[position]
-        holder.restaurantName.text = restaurant.Name
-        holder.restaurantAddress.text = restaurant.Address
+        var restaurantName = if (restaurant.Name.length > 21)
+            restaurant.Name.subSequence(0,20).toString().plus("...")
+                else restaurant.Name
+        var randomNmber = (Math.random() * 100).toString()
+        var items =randomNmber.subSequence(randomNmber.indexOf('.')+10,randomNmber.indexOf('.')+12 ).toString().plus(" items")
+        var txtPrice = randomNmber.subSequence(0, randomNmber.indexOf('.')+2).toString().plus("$")
+
+        holder.restaurantName.text = restaurantName;
+        holder.restaurantAddress.text = restaurant.City
+        holder.txtItems.text = items
+        holder.txtPrice.text = txtPrice
         Glide.with(context).load(restaurant.PicturePath).placeholder(R.drawable.ic_facebook).centerCrop().
         into(holder.restaurantImg)
         holder.restaurantImg.setOnClickListener {

@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
                 android:gravity="center"
-                android:text="My restaurant"
+                android:text="My restaurants"
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:layout_width="60dp"/>
@@ -41,6 +41,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_restaurant"
             android:layout_width="411dp"
+            android:divider="@null"
+            android:footerDividersEnabled="false"
             android:layout_height="653dp" />
     </LinearLayout>
 </layout>

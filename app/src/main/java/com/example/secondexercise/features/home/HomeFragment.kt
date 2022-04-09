@@ -84,7 +84,7 @@ class HomeFragment : Fragment() {
         binding.rcvRestaurant.layoutManager = if(!option) LinearLayoutManager(requireContext()) else GridLayoutManager(requireContext(), 2)
         binding.rcvRestaurant.setHasFixedSize(true)
         binding.rcvRestaurant.itemAnimator = DefaultItemAnimator()
-        binding.rcvRestaurant.addItemDecoration(DividerItemDecoration( binding.rcvRestaurant.context, DividerItemDecoration.VERTICAL))
+//        binding.rcvRestaurant.addItemDecoration(DividerItemDecoration( binding.rcvRestaurant.context, DividerItemDecoration.VERTICAL))
         binding.rcvRestaurant.adapter = adapterRestaurant
     }
     private fun showAlertDialogDeleteRestaurant(restaurant: Restaurant){
